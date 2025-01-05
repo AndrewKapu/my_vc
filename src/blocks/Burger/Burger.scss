@@ -1,0 +1,103 @@
+@use '../../scss/helpers' as *;
+
+.burger-wrapper {
+    @include breakpoint(tb) {
+        display: none;
+    }
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.burger-label {
+    display: none;
+}
+
+
+// Breakpoint start
+@media (max-width: 768px) {
+    .burger-label {
+        position: relative;
+        display: block;
+        height: 25px;
+        width: 30px;
+    }
+
+    .burger-label::before,
+    .burger-label::after,
+    .burger-label span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $mainLinks;
+        transition: .4s;
+        border-radius: 3px;
+    }
+
+    .burger-label::before {
+        content: "";
+        top: 0;
+    }
+
+    .burger-label::after {
+        content: "";
+        bottom: 0;
+    }
+
+    .burger-label span {
+        top: 11px;
+    }
+
+    .burger-toggle:checked~.burger-label::before {
+        transform: rotate(45deg);
+        top: 7px;
+    }
+
+    .burger-toggle:checked~.burger-label::after {
+        transform: rotate(-45deg);
+        bottom: 15px;
+    }
+
+    .burger-toggle:checked~.burger-label span {
+        transform: rotate(45deg);
+        top: 7px;
+    }
+
+
+    .burger-toggle:checked~.burger-links {
+        transform: translateY(27px);
+    }
+
+    .burger-links {
+        padding-top: 40px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        position: fixed;
+        text-align: center;
+        left: 0;
+        right: 0;
+        transform: translateY(-950px);
+        background: $mainBg;
+        z-index: 1;
+        transition: .4s;
+    }
+}
+
+/*
+Classes bellow are for stopping page
+from scrolling while burger is ebabled.
+.opacity class is added to hero block and
+.stopScroll class is added to <body> tag
+*/
+
+.opacity {
+    opacity: 0;
+ }
+
+ .stopScroll {
+    height: 100vh;
+    overflow: hidden;
+ }

@@ -1,0 +1,47 @@
+@use '../../scss/helpers' as *;
+
+.header {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+
+    &__h1 a {
+        color: $mainLinks;
+        font-family: "Gotham Pro Black";
+        font-size: 40px;
+    }
+
+
+    @include breakpoint(tb) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__h1 {
+        padding-bottom: 3px;
+    }
+
+
+    &__nav {
+        display: none;
+    }
+
+    &__nav {
+        @include breakpoint(tb) {
+            display: flex;
+            align-self: flex-end;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 10px;
+    }
+}
+
+.header a {
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+@use '../../scss/helpers/' as *;
+
+.link {
+    @include textStyle($mainLinks, 'Gotham Pro', 24px);
+    font-weight: 200;
+    border-bottom: 3px solid transparent;
+    transition: border-color .5s;
+    padding-bottom: 3px;
+}
+
+.link:hover {
+    border-color: wheat;
+}

@@ -1,0 +1,38 @@
+@mixin breakpoint($point) {
+    @if $point==xs {
+        @media (min-width: 320px) {
+            @content;
+        }
+    }
+
+    // tb = tablet
+    @else if $point==tb {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point==sm {
+        @media (min-width: 1000px) {
+            @content;
+        }
+    }
+
+    @else if $point==xl {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    }
+
+    @else if $point==xxl {
+        @media (min-width: 1920px) {
+            @content;
+        }
+    }
+}
+
+@mixin textStyle($color, $fontFamily, $size) {
+    color: $color;
+    font-family: $fontFamily;
+    font-size: $size;
+}

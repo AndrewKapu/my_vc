@@ -1,0 +1,32 @@
+@use './mixins' as *;
+
+.container {
+
+    @include breakpoint(xs) {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    @include breakpoint(tb) {
+        // max-width: 900px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+
+    @include breakpoint(xl) {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    @include breakpoint(xl) {
+        /* Ничего не пишем, тк брейкпойнт  
+         при размере экрана пользователя
+         в 1920 нам нужен только для того
+         чтобы не дать фоновому изображению 
+         бесконечно растягиваться
+         для этого и есть код ниже 
+         */
+    }
+}
+
